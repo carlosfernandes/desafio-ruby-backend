@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'stores#index'
   resources :stores, only: %i[index show]
   resources :transactions, only: [] do
     collection do

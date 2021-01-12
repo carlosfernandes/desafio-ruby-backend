@@ -15,7 +15,7 @@ RSpec.describe StoresController, type: :controller do
   describe 'GET show' do
     let!(:store) { create(:store) }
 
-    it 'render stores' do
+    it 'render store' do
       get :show, params: { id: store.id }
 
       expect(assigns[:store]).to eq(store)
