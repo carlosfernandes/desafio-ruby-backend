@@ -37,10 +37,7 @@ bundle exec rspec
 
 ## How to use
 
-Login with credentials:
-
-- email: admin@admin.com
-- password: admin123
+Access application at http://localhost:3000
 
 You can see all imported stores at 'Store' navigation. Click at show to view transactions and balance for a store.
 
