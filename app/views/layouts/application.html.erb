@@ -8,8 +8,35 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <style>
+    body {
+      display:flex;
+      flex-direction: row;
+    }
 
+    aside {
+      margin-right: 30px;
+      padding-right: 20px;
+
+    }
+  </style>
   <body>
-    <%= yield %>
+    <aside>
+      <strong>Navgation</strong>
+      <ul>
+        <li><%= link_to 'Stores', stores_path %></li>
+        <li><%= link_to 'Import Transactions', import_transactions_path %></li>
+      </ul>
+    </aside>
+    <div>
+
+      <% if notice %>
+        <div style="color: green;">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

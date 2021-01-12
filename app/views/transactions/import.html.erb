@@ -1,0 +1,12 @@
+<h1>Import Transactions</h1>
+
+<%= form_for :upload, html: { multipart: true, url: import_transactions_path} do |f| %>
+  <div>
+    <%= f.label :file %><br>
+    <%= f.file_field :file, required: true, accept: Mime[:text] %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit "Upload" %>
+  </div>
+<% end %>

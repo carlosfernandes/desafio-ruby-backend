@@ -29,11 +29,21 @@ class Transaction < ApplicationRecord
       boleto: :-,
       loan: :-,
       credit: :+,
-      loan_discharge: :+,
+      loan_receipt: :+,
       sale: :+,
       income_ted: :+,
       income_doc: :+,
       rent: :-
-    }.with_indifferent_access.fetch(kinds)
+    }.with_indifferent_access.fetch(kind)
   end
+
+  def amount_operation
+    amount_kind = Transaction.kinds.key(self.kind)
+    amount * "#{Transaction.kind_signal(amount_kind)}1".to_i
+  end
+
+  def time_only
+    transaction_time.strftime('%H:%M:%S')
+  end
+
 end
